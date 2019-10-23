@@ -7,7 +7,29 @@ exports = module.exports = {
   datasets,
   algo: function (input) {
     // YOUR CODE BETWEEN HERE
+    let pos = input[0]
+    let win
 
+    for (let i = 1; i < input.length; i++)
+    {
+      let number = input[i].split(' ');
+      pos = pos + parseInt(number[0]) - parseInt(number[1]) 
+    }
+    
+    if (pos <= 100)
+    {
+      win = 1000
+    }
+    else if (pos > 100 && pos <= 10000)
+    {
+      win = 100
+    }
+    else if (pos > 10000)
+    {
+      win = 'KO'
+    }
+
+    return win
     // AND HERE
   },
   verify: function (dataset, output) {
